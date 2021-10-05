@@ -1,0 +1,3 @@
+---
+entries_to_add: "{{ pup_etc_hosts_entries_to_add }}"
+entries_to_remove: "{{ pup_etc_hosts_entries_to_remove }}"

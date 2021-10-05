@@ -1,0 +1,17 @@
+---
+- name: Update /etc/hosts
+  block:
+  - name: Add entries to /etc/hosts
+    lineinfile:
+      path: /etc/hosts
+      line: "{{ item }}"
+      state: present
+    with_items: "{{ entries_to_add }}"
+
+  - name: Remove entries to /etc/hosts
+    lineinfile:
+      path: /etc/hosts
+      line: "{{ item }}"
+      state: absent
+    with_items: "{{ entries_to_remove }}"
+  become: true
